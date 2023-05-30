@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1000114337069",
+    "project_id": "uni-vision-ofc",
+    "storage_bucket": "uni-vision-ofc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000114337069:android:8083527f75f1c28569cfa4",
+        "android_client_info": {
+          "package_name": "br.uni_monitoring.uni_vision_ofc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000114337069-bai9kv6g6g6qpe5nkhvcubhsvfqt8ld8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.uni_monitoring.uni_vision",
+            "certificate_hash": "69ebdeba93f1ef9b1d421b57fb177244c1f9bbdb"
+          }
+        },
+        {
+          "client_id": "1000114337069-7iu4pdpmnv405lks38bhejfdm197i0ap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQgFnzJ4dQD_3XnCYw-hBJGoH684r3yz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1000114337069-7iu4pdpmnv405lks38bhejfdm197i0ap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
