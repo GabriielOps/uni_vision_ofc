@@ -73,6 +73,11 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
+            const Column(
+              children: [
+                Divider(),
+              ],
+            )
           ],
         ));
   }
