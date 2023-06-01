@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:uni_vision_ofc/contents/google_sing_in.dart';
+import 'package:uni_vision_ofc/screens/cameras_menu.dart';
 
 import '../contents/login_forms.dart';
 
@@ -18,10 +20,15 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const Icon(
+              Icons.video_chat_outlined,
+              color: Colors.black,
+              size: 150,
+            ),
             const SizedBox(
                 //Escrita Uni Vision
                 child: Padding(
-              padding: EdgeInsets.only(bottom: 50.0),
+              padding: EdgeInsets.only(bottom: 50.0, top: 20),
               child: Text(
                 'UNI - VISION',
                 style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
@@ -73,11 +80,58 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            const Column(
-              children: [
-                Divider(),
-              ],
-            )
+            const SizedBox(
+              width: 400,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                        right: 40, left: 40, top: 12, bottom: 12),
+                    child: Divider(
+                      thickness: 2,
+                      color: Colors.black26,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 70,
+              width: 400,
+              child: OutlinedButton(
+                onPressed: () {
+                  singInWithGoogle().then((value) {
+                    if (value != null) {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return const CamerasMenu(5);
+                      }));
+                    }
+                  });
+                },
+                style: OutlinedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(70)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset("assets/images/google_logo.png"),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 12.0),
+                        child: Text(
+                          'Entrar com Google',
+                          style: TextStyle(fontSize: 20, color: Colors.black),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ));
   }
