@@ -3,6 +3,7 @@ import 'package:hold_down_button/hold_down_button.dart';
 //import 'package:uni_vision/contents/cameras.dart';
 import 'package:uni_vision_ofc/contents/drawer_items.dart';
 import 'package:fan_carousel_image_slider/fan_carousel_image_slider.dart';
+import 'package:uni_vision_ofc/screens/login_page.dart';
 
 class CamerasMenu extends StatefulWidget {
   final int tempoGravado;
@@ -56,22 +57,37 @@ class _CamerasMenuState extends State<CamerasMenu> {
           ),
           const Column(
             children: [
-              DrawerItem('Gravar Tela'),
               DrawerItem('Configurações'),
               DrawerItem('Suporte'),
             ],
           ),
-          const Expanded(
+          Expanded(
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Divider(
+                  const Divider(
                     color: Colors.black12,
                     thickness: 2,
                   ),
-                  DrawerItem2('Sair'),
+                  SizedBox(
+                    width: 270,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.grey[800]),
+                        onPressed: () {
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return const LoginPage();
+                          }));
+                        },
+                        child: const Text(
+                          'Sair',
+                          style: TextStyle(
+                              fontSize: 35, fontWeight: FontWeight.bold),
+                        )),
+                  ),
                 ],
               ),
             ),

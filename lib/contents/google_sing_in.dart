@@ -25,14 +25,12 @@ Future<String?> singInWithGoogle() async {
   user = userCredential.user;
 
   if (user != null) {
-    assert(user!.email != null);
-    assert(user!.photoURL != null);
-    assert(user!.displayName != null);
-    assert(user!.isAnonymous);
-    assert(user!.uid == firebaseAuth.currentUser?.uid);
+    assert(user?.email != null);
+    assert(user?.photoURL != null);
+    assert(user?.displayName != null);
+    assert(user?.uid == firebaseAuth.currentUser?.uid);
     return '$user';
   }
-  ;
   return null;
 }
 

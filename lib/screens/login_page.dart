@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uni_vision_ofc/contents/google_sing_in.dart';
 import 'package:uni_vision_ofc/screens/cameras_menu.dart';
+import 'package:uni_vision_ofc/screens/password_reset.dart';
 
 import '../contents/login_forms.dart';
 
@@ -70,7 +71,12 @@ class _LoginPageState extends State<LoginPage> {
                 child: ElevatedButton(
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.amber),
-                  onPressed: () {/* Adicionar Função Aqui */},
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return const ResetPasswordPage();
+                    }));
+                  },
                   child: const Text(
                     'Esqueci minha senha!',
                     style: TextStyle(
