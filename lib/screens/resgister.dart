@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:uni_vision_ofc/screens/main_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -13,10 +15,24 @@ class _RegisterPageState extends State<RegisterPage> {
     final loginController = TextEditingController();
     final passwordController = TextEditingController();
 
+    Future signUp() async {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: loginController.text.trim(),
+          password: passwordController.text.trim());
+    }
+
+    ;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.amber,
-        title: Text('Registro'),
+        title: const Text(
+          'Registro',
+          style: TextStyle(
+            fontSize: 40,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -59,11 +75,12 @@ class _RegisterPageState extends State<RegisterPage> {
                       filled: true,
                       fillColor: Colors.amber[50],
                       border: const OutlineInputBorder(),
-                      labelText: 'Faça uma Senha forte!'),
+                      labelText: 'Crie uma Senha forte!'),
                 ),
               ),
             ),
           ),
+          const Text('A senha deve conter ao menos 6 caracteres.'),
           SizedBox(
             // Esqueci minha Senha
             child: Padding(
@@ -71,7 +88,11 @@ class _RegisterPageState extends State<RegisterPage> {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  signUp();
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return const MainPage();
+                  }));
                 },
                 child: const Text(
                   'Registrar',

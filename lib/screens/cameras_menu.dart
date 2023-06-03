@@ -38,7 +38,7 @@ class _CamerasMenuState extends State<CamerasMenu> {
             onPressed: () {
               FirebaseAuth.instance.signOut();
               signOutGoogle();
-              Navigator.of(context).pop();
+              //Navigator.of(context).pop();
             },
             icon: const Icon(Icons.exit_to_app_rounded),
           )

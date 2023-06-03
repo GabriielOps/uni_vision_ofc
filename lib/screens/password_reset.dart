@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ResetPasswordPage extends StatefulWidget {
@@ -8,6 +9,32 @@ class ResetPasswordPage extends StatefulWidget {
 }
 
 class _ResetPasswordPageState extends State<ResetPasswordPage> {
+  final TextEditingController _emailController = TextEditingController();
+
+  Future passwordReset() async {
+    try {
+      await FirebaseAuth.instance
+          .sendPasswordResetEmail(email: _emailController.text.trim());
+      // ignore: use_build_context_synchronously
+      showDialog(
+          context: context,
+          builder: (context) {
+            return const AlertDialog(
+              content:
+                  Text('Link para troca de senha enviado, cheque seu e-mail!'),
+            );
+          });
+    } on FirebaseAuthException catch (e) {
+      showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              content: Text(e.message.toString()),
+            );
+          });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +71,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                 Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: TextFormField(
+                    controller: _emailController,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                         filled: true,
@@ -84,7 +112,9 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                           ),
                           textAlign: TextAlign.center,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          passwordReset();
+                        },
                       ),
                     ),
                   ),
