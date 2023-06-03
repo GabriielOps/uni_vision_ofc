@@ -21,8 +21,6 @@ class _RegisterPageState extends State<RegisterPage> {
           password: passwordController.text.trim());
     }
 
-    ;
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.amber,
