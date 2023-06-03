@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hold_down_button/hold_down_button.dart';
-//import 'package:uni_vision/contents/cameras.dart';
-import 'package:uni_vision_ofc/contents/drawer_items.dart';
 import 'package:fan_carousel_image_slider/fan_carousel_image_slider.dart';
-import 'package:uni_vision_ofc/screens/login_page.dart';
+import 'package:uni_vision_ofc/contents/google_sing_in.dart';
+//import 'package:uni_vision_ofc/screens/login_page.dart';
+import 'package:uni_vision_ofc/screens/password_reset.dart';
+import 'package:uni_vision_ofc/screens/suporte.dart';
 
 class CamerasMenu extends StatefulWidget {
   final int tempoGravado;
@@ -26,8 +29,20 @@ class _CamerasMenuState extends State<CamerasMenu> {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
+
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+              signOutGoogle();
+              Navigator.of(context).pop();
+            },
+            icon: const Icon(Icons.exit_to_app_rounded),
+          )
+        ],
         title: const Text(
           'Home',
           style: TextStyle(
@@ -55,10 +70,42 @@ class _CamerasMenuState extends State<CamerasMenu> {
               ),
             ),
           ),
-          const Column(
+          Column(
             children: [
-              DrawerItem('Configurações'),
-              DrawerItem('Suporte'),
+              SizedBox(
+                width: 270,
+                child: ElevatedButton(
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.amber),
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return const ResetPasswordPage();
+                    }));
+                  },
+                  child: const Text(
+                    'Alterar senha',
+                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 270,
+                child: ElevatedButton(
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.amber),
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return const Suporte();
+                    }));
+                  },
+                  child: const Text(
+                    'Suporte',
+                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
             ],
           ),
           Expanded(
@@ -72,21 +119,11 @@ class _CamerasMenuState extends State<CamerasMenu> {
                     thickness: 2,
                   ),
                   SizedBox(
-                    width: 270,
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.grey[800]),
-                        onPressed: () {
-                          Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) {
-                            return const LoginPage();
-                          }));
-                        },
-                        child: const Text(
-                          'Sair',
-                          style: TextStyle(
-                              fontSize: 35, fontWeight: FontWeight.bold),
-                        )),
+                    child: Text(
+                      'Usuario: ${user.email!}',
+                      style: const TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ],
               ),

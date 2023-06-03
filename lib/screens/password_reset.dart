@@ -29,15 +29,16 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
         child: Container(
           color: Colors.white,
           child: SizedBox(
-            height: 200,
+            height: 260,
             width: 300,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
                     'Insira seu E-Mail',
-                    style: TextStyle(fontSize: 40, color: Colors.indigo),
+                    style: TextStyle(fontSize: 30, color: Colors.indigo),
                   ),
                 ),
                 Padding(
