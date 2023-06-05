@@ -52,3 +52,10 @@ ou navegador web através do desktop.
   De forma similar, ao lado superior direito, se encontra o botão de logoff no qual
   redireciona o usuario à tela de login novamente.
   
+  # Recomendações de uso
+  
+  Para utilizar o Software UNI-Vision, é recomendado um aparelho movel, seja ele Android ou IOS
+  No caso de utilização em ambiente web, recomenda-se fortemente o uso do Google chrome (Windows/linux)
+  e/ou Safari (MacOS).
+  
+  
