@@ -21,41 +21,42 @@ ou navegador web através do desktop.
   <img src="assets/screenshots/Drawer.jpg" height="500em" />
   </div>
   
-  ## Utilização
+  # Utilização
   
   ## 1 - Tela de Login
-  Ao abrir o programa, o usuário se depara com a tela de login,
-  no qual pode entrar com o google, criar uma conta ou recuperar sua senha.
+  Ao abrir o programa, o usuário se depara com a tela de login,<br>
+  no qual pode entrar com o google, criar uma conta ou recuperar sua senha.<br>
   
-  O sistema de recuperação de senhas é realizado através do e-mail,
-  aonde o usuário recebe um link para que a alteração de senha seja
-  realizada.
+  O sistema de recuperação de senhas é realizado através do e-mail,<br>
+  aonde o usuário recebe um link para que a alteração de senha seja<br>
+  realizada.<br>
   
   ### 1.1 - Tela de Registro
-  Similar à tela de login, a tela de registro funciona de maneira bem simples,
-  ao abrir a tela de registro o usuário insere suas credenciais de login, 
-  sendo elas e-mail e senha, após isso o usuário é encaminhado para a tela de login.
+  Similar à tela de login, a tela de registro funciona de maneira bem simples,<br>
+  ao abrir a tela de registro o usuário insere suas credenciais de login, <br>
+  sendo elas e-mail e senha, após isso o usuário é encaminhado para a tela de login.<br>
   
   ## 2 - Home Menu/ Vizualização das Cameras
-  Ao fazer login, a tela inicial é carregada, mostrando ao usuário suas cameras,
-  cada camera pode ser aberta para melhor vizualização e pode-se grava-las 
-  apertando e segudando o botão abaixo.
-  (OBS: A implementação do sistema de cameras não é funcional)
+  Ao fazer login, a tela inicial é carregada, mostrando ao usuário suas cameras,<br>
+  cada camera pode ser aberta para melhor vizualização e pode-se grava-las <br>
+  apertando e segudando o botão abaixo.<br>
+  (OBS: A implementação do sistema de cameras não é funcional)<br>
   
   ## 3 - Drawer Menu
-  Do lado superior esquerdo é possivel se deparar com o Drawer menu aonde se tem
-  configurações basicas como, alteração de senha e suporte no caso de qualquer duvida,
-  assim como na parte inferior do Drawer Menu é possivel obter o nome do usuário no
-  qual o login foi realizado.
+  Do lado superior esquerdo é possivel se deparar com o Drawer menu aonde se tem<br>
+  configurações basicas como, alteração de senha e suporte no caso de qualquer duvida,<br>
+  assim como na parte inferior do Drawer Menu é possivel obter o nome do usuário no<br>
+  qual o login foi realizado.<br>
   
   ## 4 - Logoff
-  De forma similar, ao lado superior direito, se encontra o botão de logoff no qual
-  redireciona o usuario à tela de login novamente.
+  De forma similar, ao lado superior direito, se encontra o botão de logoff no qual<br>
+  redireciona o usuario à tela de login novamente.<br>
   
   # Recomendações de uso
   
-  Para utilizar o Software UNI-Vision, é recomendado um aparelho movel, seja ele Android ou IOS
-  No caso de utilização em ambiente web, recomenda-se fortemente o uso do Google chrome (Windows/linux)
+  Para utilizar o Software UNI-Vision, é recomendado um aparelho movel, seja ele Android ou IOS<br>
+  No caso de utilização em ambiente web, recomenda-se fortemente o uso do Google chrome (Windows/linux)<br>
   e/ou Safari (MacOS).
+  
   
   
